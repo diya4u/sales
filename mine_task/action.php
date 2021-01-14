@@ -121,8 +121,6 @@ if($selectOption1!='' || $selectOption2!='' || $selectOption3!='')
  </tr>
 <?php
 
-$querystring="SELECT sale_id,customer_name,customer_mail,product_id,product_name,product_price,sale_date FROM sales ".$qry;
-//print_r($querystring);exit();
 $query = mysqli_query($conn, "SELECT sale_id,customer_name,customer_mail,product_id,product_name,product_price,sale_date FROM sales ".$qry)
    or die (mysqli_error($conn));
 
@@ -143,8 +141,6 @@ while ($row = mysqli_fetch_array($query)) {
 
 <?php
 
-$querystring="SELECT SUM(product_price) as sums FROM sales ".$qry;
-//print_r($querystring);exit();
 $query = mysqli_query($conn, "SELECT SUM(product_price) as sums  FROM sales ".$qry)
    or die (mysqli_error($conn));
 
@@ -163,9 +159,6 @@ while ($row = mysqli_fetch_array($query)) {
 }
 ?>
 </table>
-
-
-
 </body>
 </html>
 
